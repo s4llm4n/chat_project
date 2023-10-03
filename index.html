@@ -1,0 +1,83 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <title>Salsal Chat</title>
+</head>
+<body>
+    
+  <!-- container & title -->
+<div class="container my-4">    <!-- buttons for chatrooms -->
+  <h1 class="my-4 text-center">Salsal Chat</h1>
+
+  <!-- butons for chatrooms -->
+  <div class="chat-rooms mb-3 text-center">
+    <div class="my-2">Choose a chatrooms:</div>
+    <div class="btn">#general</div>
+    <div class="btn">#gaming</div>
+    <div class="btn">#kajian</div>
+    <div class="btn">#ninjas</div>
+  </div>
+
+  <!-- chat list / window -->
+  <div class="chat-window">
+    <ul class="chat-list list-group"></ul>
+  </div>
+
+  <!-- new chat form -->
+  <form class="new-chat my-3">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text">Your Message:</div>
+      </div>
+      <input type="text" id="message" class="form-control" required>
+      <div class="input-group-append">
+        <input type="submit" class="btn" value="send">
+      </div>
+    </div>
+  </form>
+
+  <!-- update name form -->
+  <form class="new-name my-3">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text">Update Name:</div>
+      </div>
+      <input type="text" id="name" class="form-control" required>
+      <div class="input-group-append">
+        <input type="submit" class="btn" value="update">
+      </div>
+    </div>
+    <div class="update-mssg"></div>
+  </form>
+</div>
+
+  <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-firestore.js"></script>
+  <script>
+      // Import the functions you need from the SDKs you need
+      
+      // TODO: Add SDKs for Firebase products that you want to use
+    
+      // Your web app's Firebase configuration
+      var config = {
+        apiKey: "AIzaSyCWoijwkn6JZixZc-shgG3CigyDjg9Qm1w",
+        authDomain: "udemy-modern-javascript-65858.firebaseapp.com",
+        databaseURL: "https://udemy-modern-javascript-65858-default-rtdb.firebaseio.com",
+        projectId: "udemy-modern-javascript-65858",
+        storageBucket: "udemy-modern-javascript-65858.appspot.com",
+        messagingSenderId: "316537058040",
+        appId: "1:316537058040:web:323389b4f217107524810d"
+      };
+    
+      // Initialize Firebase
+      firebase.initializeApp(config);
+      const db = firebase.firestore();
+    </script>
+  <script src = "scripts/chat.js"></script>
+  <script src = "scripts/ui.js"></script>
+  <script src = "scripts/app.js"></script>
+</body>
+</html>
